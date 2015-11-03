@@ -14,6 +14,7 @@ gulp.task('minify-js', function () {
 });
 
 gulp.task('minify-js:watch', function () {
+  gulp.start('minify-js');
   gulp.watch([<% var tab = src.split(','); for(var i = 0; i < tab.length; i++) { %>'<%=tab[i].replace(' ', '')%>'<% if (i !== tab.length - 1) {%>,<% } %>
     <%}%>], ['minify-js']);
 });
